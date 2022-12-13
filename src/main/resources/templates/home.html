@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Home</title>
+</head>
+<body>
+<h1>Welcome!</h1>
+
+<h2>Click <a th:href="@{/hello}">here</a> to see a greeting.</h2>
+
+<h2>Click <a th:href="@{/secure/admin}">here</a> to access the admin page.</h2>
+
+<h2>Translations:</h2>
+
+<h3><a th:href="@{/secure/hello/bosnian}">Bosnian</a>, <a th:href="@{/secure/hello/dutch}">Dutch</a>, <a th:href="@{/secure/hello/finnish}">Finnish</a>,
+    <a th:href="@{/secure/hello/french}">French</a>, <a th:href="@{/secure/hello/german}">German</a>, <a th:href="@{/secure/hello/norwegian}">Norwegian</a>,
+    <a th:href="@{/secure/hello/romanian}">Romanian</a>, <a th:href="@{/secure/hello/spanish}">Spanish</a>, <a th:href="@{/secure/hello/danish}">Danish</a>,
+    <a th:href="@{/secure/hello/latvian}">Latvian</a>
+</h3>
+</body>
+</html>

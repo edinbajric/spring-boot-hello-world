@@ -2,7 +2,7 @@ package com.task1.springboothelloworld;
 
 import java.sql.*;
 
-public class Message {
+public class ReturnMessage {
     public String returnTranslation(String language) throws Exception{
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/langdb", "root", "edin");
         Statement stmt = connection.createStatement();

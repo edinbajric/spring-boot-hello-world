@@ -1,4 +1,4 @@
-package com.task1.springboothelloworld;
+package com.task1.springboothelloworld.logger;
 
 import lombok.SneakyThrows;
 import lombok.extern.log4j.Log4j2;
