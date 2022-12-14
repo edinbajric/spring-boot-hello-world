@@ -13,7 +13,7 @@
 
 <div class="container">
 
-    <h3>List Language-Message pairs</h3>
+    <h3>List Language-Message Pairs</h3>
 
     <hr/>
 
@@ -34,11 +34,8 @@
 
     </table>
 
-    <h3>Add Language-Message pair</h3>
-    <form>
-        <label>Language: <input type="text" name="language"/></label>
-        <label>Message: <input type="text" name="message"/></label>
-        <input type="submit" value="Add"/>
+    <form th:action="@{/secure/admin/add}" method="GET">
+        <input type="submit" value="Add Language-Message pairs"/>
     </form>
 </div>
 

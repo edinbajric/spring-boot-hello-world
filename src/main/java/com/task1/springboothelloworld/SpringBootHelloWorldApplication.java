@@ -11,7 +11,7 @@ public class SpringBootHelloWorldApplication {
 		SpringApplication.run(SpringBootHelloWorldApplication.class, args);
 		Controller printHW = new Controller();
 
-		System.out.println(printHW.PrintHelloWorld());
+		System.out.println(printHW.printHelloWorld());
 
 	}
 }
