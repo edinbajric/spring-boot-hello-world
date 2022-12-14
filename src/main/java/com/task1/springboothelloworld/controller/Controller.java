@@ -1,6 +1,7 @@
 package com.task1.springboothelloworld.controller;
 
 import com.task1.springboothelloworld.ReturnMessage;
+import com.task1.springboothelloworld.entity.Message;
 import com.task1.springboothelloworld.repo.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
