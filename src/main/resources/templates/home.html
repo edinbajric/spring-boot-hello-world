@@ -6,19 +6,24 @@
 <body>
 <h1>Welcome!</h1>
 
-<h2>Click <a th:href="@{/hello}">here</a> to see a greeting.</h2>
-
-<h2>Click <a th:href="@{/secure/admin}">here</a> to access the admin page.</h2>
-
 <h2>Translations:</h2>
 
-<h3><a th:href="@{/secure/hello/bosnian}">Bosnian</a>, <a th:href="@{/secure/hello/dutch}">Dutch</a>, <a th:href="@{/secure/hello/finnish}">Finnish</a>,
-    <a th:href="@{/secure/hello/french}">French</a>, <a th:href="@{/secure/hello/german}">German</a>, <a th:href="@{/secure/hello/norwegian}">Norwegian</a>,
-    <a th:href="@{/secure/hello/romanian}">Romanian</a>, <a th:href="@{/secure/hello/spanish}">Spanish</a>, <a th:href="@{/secure/hello/danish}">Danish</a>,
-    <a th:href="@{/secure/hello/latvian}">Latvian</a>
+<h3><a th:href="@{/api/db/secure/hello/bosnian}">Bosnian</a>, <a th:href="@{/api/db/secure/hello/dutch}">Dutch</a>, <a th:href="@{/api/db/secure/hello/finnish}">Finnish</a>,
+    <a th:href="@{/api/db/secure/hello/french}">French</a>, <a th:href="@{/api/db/secure/hello/german}">German</a>, <a th:href="@{/api/db/secure/hello/norwegian}">Norwegian</a>,
+    <a th:href="@{/api/db/secure/hello/romanian}">Romanian</a>, <a th:href="@{/api/db/secure/hello/spanish}">Spanish</a>, <a th:href="@{/api/db/secure/hello/danish}">Danish</a>,
+    <a th:href="@{/api/db/secure/hello/latvian}">Latvian</a>
 </h3>
 <p>
-    You can see more translations by visiting <strong>localhost:8080/secure/hello/{language}</strong> (if translation is in the database)
+    You can see more translations by visiting <strong>localhost:8080/api/db/secure/hello/{language}</strong> (if translation is in the database)
 </p>
+
+<h2><a th:href="@{/api/db/admin}">Admin page</a></h2>
+
+<h2>
+    <a th:href="@{/readme}">Instructions</a>
+</h2>
+
+<h2><a th:href="@{/hello}">Sign out</a></h2>
+
 </body>
 </html>

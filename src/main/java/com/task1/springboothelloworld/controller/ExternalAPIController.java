@@ -1,7 +1,6 @@
 package com.task1.springboothelloworld.controller;
 
 import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Profile("external")
 @RestController
-@RequestMapping("/external")
+@RequestMapping("/api/external")
 public class ExternalAPIController {
     @GetMapping(path="/{name}")
     public Object displayCountry(@PathVariable String name) {

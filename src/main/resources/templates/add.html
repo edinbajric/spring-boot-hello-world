@@ -15,7 +15,7 @@
     <h3>Add New Pair</h3>
     <hr/>
 
-    <form th:action="@{/secure/admin/save}" th:object="${messages}" method="POST">
+    <form th:action="@{/api/db/admin/save}" th:object="${messages}" method="POST">
 
         <input type="text" th:field="*{language}" class="form-control col-4 mb-4" placeholder="Enter Language" />
 
@@ -25,7 +25,7 @@
 
     </form>
     <hr/>
-    <a th:href="@{/secure/admin}">Back to list</a>
+    <a th:href="@{/api/db/admin}">Back to list</a>
 </div>
 
 </body>
