@@ -1,4 +1,4 @@
-package com.task1.springboothelloworld;
+package com.task1.springboothelloworld.query;
 
 import java.sql.*;
 import java.util.HashMap;

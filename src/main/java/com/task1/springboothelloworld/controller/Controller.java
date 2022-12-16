@@ -1,12 +1,15 @@
 package com.task1.springboothelloworld.controller;
 
-import com.task1.springboothelloworld.ReturnMessage;
+import com.task1.springboothelloworld.query.ReturnMessage;
 import com.task1.springboothelloworld.entity.Message;
 import com.task1.springboothelloworld.repo.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+@Profile("database")
 @RestController
 @RequestMapping("/secure")
 
@@ -52,7 +55,6 @@ public class Controller {
         messageRepository.save(message);
         return "Pair added successfully, go back to Admin Page to see changes";
     }
-
 }
 
 
