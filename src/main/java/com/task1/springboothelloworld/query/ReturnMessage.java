@@ -6,7 +6,6 @@ import java.util.HashMap;
 public class ReturnMessage {
 
     Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/langdb", "root", "edin");
-    Statement stmt = connection.createStatement();
 
     public ReturnMessage() throws SQLException {
     }
@@ -15,8 +14,12 @@ public class ReturnMessage {
 
         String returnMessageQuery = "SELECT message " +
                 "FROM messages " +
-                "WHERE language = '" + language + "';";
-        ResultSet resultSet = stmt.executeQuery(returnMessageQuery);
+                "WHERE language = ?";
+
+        PreparedStatement stmt = connection.prepareStatement(returnMessageQuery);
+        stmt.setString(1, language);
+        ResultSet resultSet = stmt.executeQuery();
+
         String result = null;
 
         while(resultSet.next()){
