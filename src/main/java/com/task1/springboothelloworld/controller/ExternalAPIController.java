@@ -20,4 +20,10 @@ public class ExternalAPIController {
 
         return result;
     }
+
+    @GetMapping("/hello")
+    public String returnHello() {
+
+        return "Hello from external!";
+    }
 }

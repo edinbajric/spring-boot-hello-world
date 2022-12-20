@@ -56,6 +56,12 @@ public class Controller {
 
         return "Pair added successfully, go back to Admin Page to see changes";
     }
+
+    @GetMapping("/hello")
+    public String returnHello(){
+
+        return "Hello from db!";
+    }
 }
 
 

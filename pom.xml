@@ -8,6 +8,7 @@
 		<version>2.7.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.task1</groupId>
 	<artifactId>spring-boot-hello-world</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
