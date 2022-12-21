@@ -16,9 +16,7 @@ public class ExternalAPIController {
         String url = "https://api.genderize.io?name={name}";
         RestTemplate restTemplate = new RestTemplate();
 
-        Object result = restTemplate.getForObject(url, Object.class, name);
-
-        return result;
+        return restTemplate.getForObject(url, Object.class, name);
     }
 
     @GetMapping("/hello")
