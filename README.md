@@ -1,6 +1,6 @@
 ﻿# spring-boot-hello-world
 
-# docker commands used to dockerize the application: 
+### docker commands used to dockerize the application: 
 - docker pull mysql
 - docker run -d -p 3307:3306 --name mysqldb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=test mysql 
 - docker build -t app .
