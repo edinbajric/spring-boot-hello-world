@@ -10,3 +10,24 @@
   L_DATABASE=test app
 - docker run -p 9091:8080 --name app1 --net spring-net -e "SPRING_PROFILES_ACTIVE=external" -e MYSQL_HOST=mysqldb -e MYSQL_USER=root -e MYSQL_PASSWORD=root -e MYSQL_PORT=3306 -e MYS
   QL_DATABASE=test app
+
+### commands to create and populate language-message pairs table
+CREATE TABLE IF NOT EXISTS messages(
+id INT AUTO_INCREMENT PRIMARY KEY,
+language varchar(255) NOT NULL,
+message varchar(255) NOT NULL
+);
+
+INSERT INTO messages(language, message)
+VALUES
+('Bosnian', 'Zdravo svijete'),
+('Dutch', 'Hallo Wereld'),
+('Finnish', 'Hei maailma'),
+('French', 'Bonjour le monde'),
+('German', 'Hallo Welt'),
+('Norwegian', 'Hei Verden'),
+('Romanian', 'Salut Lume'),
+('Spanish', 'Hola Mundo'),
+('Danish', 'Hej Verden'),
+('Latvian', 'Sveika pasaule');
+
