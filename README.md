@@ -31,4 +31,5 @@ VALUES
 ('Danish', 'Hej Verden'),
 ('Latvian', 'Sveika pasaule');
 
-
+### nginx config is in resources
+### docker mysqldb container must be running for the application to run properly
