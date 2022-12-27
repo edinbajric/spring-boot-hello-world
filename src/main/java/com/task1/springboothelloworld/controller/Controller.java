@@ -2,6 +2,7 @@ package com.task1.springboothelloworld.controller;
 
 import com.task1.springboothelloworld.entity.Message;
 import com.task1.springboothelloworld.repo.MessageRepository;
+import com.task1.springboothelloworld.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,9 @@ import java.util.List;
 @RequestMapping("/api/db")
 
 public class Controller {
-    public Controller() {
+
+    public Controller(MessageService messageService) {
+        this.messageService = messageService;
     }
 
     @GetMapping("/hello-rest")
@@ -24,19 +27,18 @@ public class Controller {
     }
     @GetMapping(path="/secure/hello/{language}")
 
-    public String helloWorld(@PathVariable String language) throws Exception {
-
-        List<Object> rawResult = messageRepository.findByLanguage(language);
+    public String helloWorld(@PathVariable String language) {
+        List<Object> rawResult = messageService.getMessages(language);
 
         return rawResult.toString().replace("[","").replace("]","");
     }
 
     @Autowired
     private MessageRepository messageRepository;
+    private final MessageService messageService;
 
     @GetMapping("/admin")
     public ModelAndView adminPage() {
-
         ModelAndView modelAndView = new ModelAndView("admin");
         modelAndView.addObject("messages", messageRepository.findAll());
 
