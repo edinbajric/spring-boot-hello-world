@@ -1,12 +1,13 @@
 package com.task1.springboothelloworld.controller;
 
-import com.task1.springboothelloworld.query.ReturnMessage;
 import com.task1.springboothelloworld.entity.Message;
 import com.task1.springboothelloworld.repo.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 @Profile("database")
 @RestController
@@ -24,9 +25,10 @@ public class Controller {
     @GetMapping(path="/secure/hello/{language}")
 
     public String helloWorld(@PathVariable String language) throws Exception {
-            ReturnMessage result = new ReturnMessage();
 
-            return result.returnTranslation(language);
+        List<Object> rawResult = messageRepository.findByLanguage(language);
+
+        return rawResult.toString().replace("[","").replace("]","");
     }
 
     @Autowired
