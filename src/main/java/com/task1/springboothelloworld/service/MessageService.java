@@ -10,7 +10,7 @@ public interface MessageService {
 
     List<Message> getAll();
 
-    <S extends Message> S save(S entity);
+    <S extends Message> void save(S entity);
 
-    List<Message> saveAll(List<Message> data);
+    void saveAll(List<Message> data);
 }

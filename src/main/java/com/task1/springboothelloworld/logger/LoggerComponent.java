@@ -38,10 +38,8 @@ public class LoggerComponent {
     private String constructLogMsg(JoinPoint jp) {
         var args = Arrays.stream(jp.getArgs()).map(String::valueOf).collect(Collectors.joining(",", "[", "]"));
         Method method = ((MethodSignature) jp.getSignature()).getMethod();
-        var sb = new StringBuilder("@");
-        sb.append(method.getName());
-        sb.append(":");
-        sb.append(args);
-        return sb.toString();
+        return "@" + method.getName() +
+                ":" +
+                args;
     }
 }

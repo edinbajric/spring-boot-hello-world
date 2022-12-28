@@ -29,12 +29,12 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public <S extends Message> S save(S entity) {
-        return messageRepository.save(entity);
+    public <S extends Message> void save(S entity) {
+        messageRepository.save(entity);
     }
 
     @Override
-    public List<Message> saveAll(List<Message> data) {
-        return messageRepository.saveAll(data);
+    public void saveAll(List<Message> data) {
+        messageRepository.saveAll(data);
     }
 }
