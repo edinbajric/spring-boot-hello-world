@@ -13,6 +13,5 @@ public class SpringBootHelloWorldApplication {
 		Controller printHW = new Controller(null);
 
 		System.out.println(printHW.printHelloWorld());
-
 	}
 }
