@@ -3,9 +3,11 @@ package com.task1.springboothelloworld.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.context.annotation.Profile;
 
 import javax.persistence.*;
 
+@Profile("database")
 @Entity
 @Table(name="messages")
 @Data

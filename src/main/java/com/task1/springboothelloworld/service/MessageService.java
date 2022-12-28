@@ -1,8 +1,10 @@
 package com.task1.springboothelloworld.service;
 
 import com.task1.springboothelloworld.entity.Message;
+import org.springframework.context.annotation.Profile;
 
 import java.util.List;
+@Profile("database")
 
 public interface MessageService {
 
