@@ -1,9 +1,9 @@
 package com.task1.springboothelloworld;
 
 import com.task1.springboothelloworld.controller.Controller;
-import com.task1.springboothelloworld.service.MessageService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 @SpringBootApplication
 public class SpringBootHelloWorldApplication {

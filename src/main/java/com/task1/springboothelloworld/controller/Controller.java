@@ -7,13 +7,14 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
-
 @Profile("database")
 @RestController
 @RequestMapping("/api/db")
 
 public class Controller {
+
+    @Autowired
+    private final MessageService messageService;
 
     public Controller(MessageService messageService) {
         this.messageService = messageService;
@@ -27,13 +28,10 @@ public class Controller {
     @GetMapping(path="/secure/hello/{language}")
 
     public String helloWorld(@PathVariable String language) {
-        List<Object> rawResult = messageService.getMessages(language);
+        Message rawResult = messageService.getMessages(language);
 
-        return rawResult.toString().replace("[","").replace("]","");
+        return rawResult.getMessage();
     }
-
-    @Autowired
-    private final MessageService messageService;
 
     @GetMapping("/admin")
     public ModelAndView adminPage() {
