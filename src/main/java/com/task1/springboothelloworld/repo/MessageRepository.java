@@ -13,4 +13,6 @@ public interface MessageRepository extends JpaRepository<Message, Long> {
 
     @Query("select m.message from Message m where m.language=:language")
     List<Object> findByLanguage(@Param("language") String language);
+
+    List<Message> findAll();
 }

@@ -1,5 +1,6 @@
 package com.task1.springboothelloworld.service;
 
+import com.task1.springboothelloworld.entity.Message;
 import com.task1.springboothelloworld.repo.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,14 @@ public class MessageService {
 
     public List<Object> getMessages(String language){
         return messageRepository.findByLanguage(language);
+    }
+
+    public List<Message> getAll(){
+        return messageRepository.findAll();
+    }
+
+    public <S extends Message> S save(S entity) {
+        return messageRepository.save(entity);
     }
 
 }

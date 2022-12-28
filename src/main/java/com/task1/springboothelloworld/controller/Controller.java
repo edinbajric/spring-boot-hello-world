@@ -1,7 +1,6 @@
 package com.task1.springboothelloworld.controller;
 
 import com.task1.springboothelloworld.entity.Message;
-import com.task1.springboothelloworld.repo.MessageRepository;
 import com.task1.springboothelloworld.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
@@ -34,13 +33,12 @@ public class Controller {
     }
 
     @Autowired
-    private MessageRepository messageRepository;
     private final MessageService messageService;
 
     @GetMapping("/admin")
     public ModelAndView adminPage() {
         ModelAndView modelAndView = new ModelAndView("admin");
-        modelAndView.addObject("messages", messageRepository.findAll());
+        modelAndView.addObject("messages", messageService.getAll());
 
         return modelAndView;
     }
@@ -56,7 +54,7 @@ public class Controller {
 
     @PostMapping("/admin/save")
     public String savePage(@ModelAttribute("messages") Message message) {
-        messageRepository.save(message);
+        messageService.save(message);
 
         return "Pair added successfully, go back to Admin Page to see changes";
     }
