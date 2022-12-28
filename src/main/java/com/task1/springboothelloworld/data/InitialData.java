@@ -7,6 +7,9 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class InitialData {
     @Autowired
@@ -19,15 +22,19 @@ public class InitialData {
     @EventListener
     public void appReady(ApplicationReadyEvent event) {
 
-        messageService.save(new Message(1L, "Bosnian", "Zdravo svijete"));
-        messageService.save(new Message(2L, "Dutch", "Hallo Wereld"));
-        messageService.save(new Message(3L, "Finnish", "Hei maailma"));
-        messageService.save(new Message(4L, "French", "Bonjour le monde"));
-        messageService.save(new Message(5L, "German", "Hallo Welt"));
-        messageService.save(new Message(6L, "Norwegian", "Hei Verden"));
-        messageService.save(new Message(7L, "Romanian", "Salut Lume"));
-        messageService.save(new Message(8L, "Spanish", "Hola Mundo"));
-        messageService.save(new Message(9L, "Danish", "Hej Verden"));
-        messageService.save(new Message(10L, "Latvian", "Sveika pasaule"));
+        List<Message> data = new ArrayList<>();
+
+        data.add(0, new Message(null, "Bosnian", "Zdravo svijete"));
+        data.add(1, new Message(null, "Dutch", "Hallo Wereld"));
+        data.add(2, new Message(null, "Finnish", "Hei maailma"));
+        data.add(3, new Message(null, "French", "Bonjour le monde"));
+        data.add(4, new Message(null, "German", "Hallo Welt"));
+        data.add(5, new Message(null, "Norwegian", "Hei Verden"));
+        data.add(6, new Message(null, "Romanian", "Salut Lume"));
+        data.add(7, new Message(null, "Spanish", "Hola Mundo"));
+        data.add(8, new Message(null, "Danish", "Hej Verden"));
+        data.add(9, new Message(null, "Latvian", "Sveika pasaule"));
+
+        messageService.saveAll(data);
     }
 }

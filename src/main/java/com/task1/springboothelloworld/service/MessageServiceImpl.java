@@ -33,4 +33,8 @@ public class MessageServiceImpl implements MessageService {
         return messageRepository.save(entity);
     }
 
+    @Override
+    public List<Message> saveAll(List<Message> data) {
+        return messageRepository.saveAll(data);
+    }
 }
