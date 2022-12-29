@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 @Profile("external")
 @RestController
 @RequestMapping("/api/external")
-public class ExternalAPIController {
+public class ExternalController {
     @GetMapping(path="/{name}")
     public Object displayGender(@PathVariable String name) {
         String url = "https://api.genderize.io?name={name}";
