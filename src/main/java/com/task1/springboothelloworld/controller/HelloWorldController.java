@@ -4,28 +4,32 @@ import com.task1.springboothelloworld.entity.Message;
 import com.task1.springboothelloworld.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Profile("database")
-@RestController
+@Controller
 @RequestMapping("/api/db")
 
-public class Controller {
+public class HelloWorldController {
 
     @Autowired
     private final MessageService messageService;
 
-    public Controller(MessageService messageService) {
+    public HelloWorldController(MessageService messageService) {
         this.messageService = messageService;
     }
 
+    @ResponseBody
     @GetMapping("/hello-rest")
-    public String printHelloWorld(){
+    public String printHelloWorld() {
 
         return "Hello World";
     }
-    @GetMapping(path="/secure/hello/{language}")
+
+    @ResponseBody
+    @GetMapping(path = "/secure/hello/{language}")
 
     public String helloWorld(@PathVariable String language) {
         Message rawResult = messageService.getMessages(language);
@@ -54,11 +58,12 @@ public class Controller {
     public String savePage(@ModelAttribute("messages") Message message) {
         messageService.save(message);
 
-        return "Pair added successfully, go back to Admin Page to see changes";
+        return "redirect:/api/db/admin";
     }
 
+    @ResponseBody
     @GetMapping("/hello")
-    public String returnHello(){
+    public String returnHello() {
 
         return "Hello from db!";
     }

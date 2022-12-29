@@ -1,6 +1,6 @@
 package com.task1.springboothelloworld;
 
-import com.task1.springboothelloworld.controller.Controller;
+import com.task1.springboothelloworld.controller.HelloWorldController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,7 +10,7 @@ public class SpringBootHelloWorldApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootHelloWorldApplication.class, args);
-		Controller printHW = new Controller(null);
+		HelloWorldController printHW = new HelloWorldController(null);
 
 		System.out.println(printHW.printHelloWorld());
 	}
