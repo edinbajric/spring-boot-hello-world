@@ -13,13 +13,17 @@ import org.springframework.scheduling.annotation.Scheduled;
 @EnableCaching
 @EnableScheduling
 public class CachingConfig {
+
     @Bean
     public CacheManager cacheManager() {
+
         return new ConcurrentMapCacheManager("translations");
     }
+
     @CacheEvict(value = "translations", allEntries = true)
     @Scheduled(fixedRateString = "60000")
     public void emptyTranslationsCache() {
+
         System.out.println("Emptying translations cache");
     }
 }
