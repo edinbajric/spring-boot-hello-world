@@ -3,7 +3,6 @@ package com.task1.springboothelloworld.controller;
 import com.task1.springboothelloworld.entity.Message;
 import com.task1.springboothelloworld.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
