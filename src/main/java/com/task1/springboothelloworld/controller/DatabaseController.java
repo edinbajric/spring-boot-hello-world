@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
+
 @Profile("database")
 @Controller
 @RequestMapping("/api/db")
@@ -57,7 +59,7 @@ public class DatabaseController {
     }
 
     @PostMapping("/admin/save")
-    public String savePage(@ModelAttribute("messages") Message message) {
+    public String savePage(@Valid @ModelAttribute("messages") Message message) {
         messageService.save(message);
 
         return "redirect:/api/db/admin";
