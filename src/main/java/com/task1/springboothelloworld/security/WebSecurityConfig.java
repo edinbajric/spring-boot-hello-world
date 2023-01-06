@@ -17,36 +17,16 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .authorizeHttpRequests((requests) -> requests
-                        .antMatchers("/api/db/admin")
-                        .hasRole("ADMIN")
-                        .antMatchers("/", "/home").permitAll()
-                        .anyRequest().authenticated()
-                )
+        http.authorizeHttpRequests((requests) -> requests.antMatchers("/api/db/admin").hasRole("ADMIN").antMatchers("/", "/home").permitAll().anyRequest().authenticated())
 
-                .formLogin((form) -> form
-                        .loginPage("/login")
-                        .permitAll()
-                )
-                .logout(LogoutConfigurer::permitAll);
+                .formLogin((form) -> form.loginPage("/login").permitAll()).logout(LogoutConfigurer::permitAll);
         return http.build();
     }
 
     @Bean
     public UserDetailsService userDetailsService() {
-        UserDetails user =
-                User.withDefaultPasswordEncoder()
-                        .username("user")
-                        .password("pass")
-                        .roles("USER")
-                        .build();
-        UserDetails admin =
-                User.withDefaultPasswordEncoder()
-                        .username("admin")
-                        .password("pass")
-                        .roles("ADMIN")
-                        .build();
+        UserDetails user = User.withDefaultPasswordEncoder().username("user").password("pass").roles("USER").build();
+        UserDetails admin = User.withDefaultPasswordEncoder().username("admin").password("pass").roles("ADMIN").build();
 
         return new InMemoryUserDetailsManager(user, admin);
     }

@@ -26,20 +26,18 @@ public class LoggerComponent {
     public Object logAroundExec(ProceedingJoinPoint pjp) {
         log.info("before {}", constructLogMsg(pjp));
         var proceed = pjp.proceed();
-        log.info("after {} with result: {}",constructLogMsg(pjp), proceed.toString());
+        log.info("after {} with result: {}", constructLogMsg(pjp), proceed.toString());
         return proceed;
     }
 
     @AfterThrowing(pointcut = POINTCUT, throwing = "e")
     public void logAfterException(JoinPoint jp, Exception e) {
-        log.error("Exception during: {} with ex: {}", constructLogMsg(jp),  e.toString());
+        log.error("Exception during: {} with ex: {}", constructLogMsg(jp), e.toString());
     }
 
     private String constructLogMsg(JoinPoint jp) {
         var args = Arrays.stream(jp.getArgs()).map(String::valueOf).collect(Collectors.joining(",", "[", "]"));
         Method method = ((MethodSignature) jp.getSignature()).getMethod();
-        return "@" + method.getName() +
-                ":" +
-                args;
+        return "@" + method.getName() + ":" + args;
     }
 }

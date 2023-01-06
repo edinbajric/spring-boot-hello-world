@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 
 @Profile("database")
 @Entity
-@Table(name="messages")
+@Table(name = "messages")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

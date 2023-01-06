@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @RequestMapping("/api/external")
 public class ExternalController {
-    @GetMapping(path="/{name}")
+    @GetMapping(path = "/{name}")
     public Object displayGender(@PathVariable String name) {
         String url = "https://api.genderize.io?name={name}";
         RestTemplate restTemplate = new RestTemplate();

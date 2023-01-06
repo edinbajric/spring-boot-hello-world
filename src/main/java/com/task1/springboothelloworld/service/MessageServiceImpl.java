@@ -22,12 +22,12 @@ public class MessageServiceImpl implements MessageService {
 
     @Override
     @Cacheable("translations")
-    public Message getMessages(String language){
+    public Message getMessages(String language) {
         return messageRepository.findByLanguage(language);
     }
 
     @Override
-    public List<Message> getAll(){
+    public List<Message> getAll() {
         return messageRepository.findAll();
     }
 

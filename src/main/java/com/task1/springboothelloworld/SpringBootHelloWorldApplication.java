@@ -8,10 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringBootHelloWorldApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringBootHelloWorldApplication.class, args);
-		DatabaseController printHW = new DatabaseController(null);
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBootHelloWorldApplication.class, args);
+        DatabaseController printHW = new DatabaseController(null);
 
-		System.out.println(printHW.printHelloWorld());
-	}
+        System.out.println(printHW.printHelloWorld());
+    }
 }
